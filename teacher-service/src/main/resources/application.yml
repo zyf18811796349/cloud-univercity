@@ -1,0 +1,14 @@
+spring:
+  profiles:
+      active: dev
+  jackson:
+      date-format: yyyy-MM-dd HH:mm:ss
+      time-zone: GMT+8
+eureka:
+  client:
+    serviceUrl:
+#      defaultZone: http://localhost:8761//eureka/
+#       defaultZone: https://${spring.cloud.eureka.user.name}:${spring.cloud.eureka.user.password}@v1199.net:${config.server.port}/eureka
+       defaultZone: http://master:8761/eureka/,http://slave:8762/eureka/
+  instance:
+    preferIpAddress: true
